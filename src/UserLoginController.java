@@ -96,10 +96,12 @@ public class UserLoginController extends HttpServlet {
 				System.out.println("final...");
 
 			} else {
-				out.println("<script type=\"text/javascript\">");
-				out.println("alert('User or password incorrect');");
-				out.println("location='WelcomePage.html';");
-				out.println("</script>");
+				
+				out.println("<meta http-equiv='refresh' content='3;URL=index.jsp'>");//redirects after 3 seconds
+				out.println("<p style='color:red;'>User or password incorrect!</p>");
+
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.html");
+				requestDispatcher.forward(request, response);
 				
 			}
 

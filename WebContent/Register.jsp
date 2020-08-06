@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Cabriolet Registration</title>
+<title>VCabs Registration</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -87,7 +87,7 @@
 	</form>
 	</section> <section class="container-footer">
 	<p align="center">
-		Already a member? <a href="#">Login</a>
+		Already a member? <a href="index.html">Login</a>
 	</p>
 	</section> </section> </section>
 

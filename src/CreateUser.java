@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import javax.swing.JOptionPane;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,6 +27,10 @@ public class CreateUser extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	private void msgbox(String s){
+		JOptionPane.showMessageDialog(null, s);
+	}
+	
     public CreateUser() {
         super();
         // TODO Auto-generated constructor stub
@@ -51,7 +57,7 @@ public class CreateUser extends HttpServlet {
 			PreparedStatement query = con.prepareStatement(
 					"insert into Customer(firstName,lastName,emailID,phoneNumber,gender,DOB,password) values(?,?,?,?,?,?,md5(?))");
 			
-			
+			if(request.getParameter("password").equals(request.getParameter("reEnterPassword"))) {
 			query.setString(1, request.getParameter("firstName"));
 			query.setString(2, request.getParameter("lastName"));
 			query.setString(3, request.getParameter("emailID"));
@@ -67,7 +73,14 @@ public class CreateUser extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("index.html");
 			rd.forward(request, response);
 
-			
+			}
+			else
+			{
+				msgbox("Passwords do not match!!");
+				RequestDispatcher rd = request.getRequestDispatcher("Register.jsp");
+				rd.forward(request, response);
+
+			}
 		
 
 

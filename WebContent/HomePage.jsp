@@ -35,7 +35,7 @@
 			
 		<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list"
 			style="font-size: 30px; color: white;"></span>&ensp; Rides History</a> <a></a>
-		<a href="WelcomePage.html"><span class="glyphicon glyphicon-off"
+		<a href="index.html"><span class="glyphicon glyphicon-off"
 			style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
 	</div>
 	
@@ -46,33 +46,17 @@
 	</div>
 
 	<div id="title" style="cursor: pointer" onclick="">
-			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>Cabriolet
+			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>VCabs
 		</a>
 		</div>
 	<hr>
 	
-	<input id="origin-input" class="controls" type="text"
-		placeholder="Enter an origin location">
-	<input id="destination-input" class="controls" type="text"
-		placeholder="Enter a destination location">
-
-	<div id="mode-selector" class="controls">
-		<input id="submit" type="button" class="btn btn-default submit"
-		value="Get Your Current Location">
-		<input type="radio" name="type" id="changemode-walking"> <label
-			for="changemode-walking">Walking</label> <input type="radio"
-			name="type" id="changemode-transit"> <label
-			for="changemode-transit">Transit</label> <input type="radio"
-			name="type" id="changemode-driving" checked="checked"> <label
-			for="changemode-driving">Driving</label>
-	</div>
-
+	
 
 	<div id="map"></div>
 
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaUnlvOLz0h3PlhKnbBCcph86jMWYUHf0&libraries=places&callback=initMap"
-		async defer></script>
+	  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVH7kZSu55QAuYXlXzCKJguGqdPfOJ1T4&callback=initMap"
+  type="text/javascript"></script>
 	<div class="d-flex flex-row-reverse">
 		<div class="heading">Take a Ride</div>
 		<div class="row">
@@ -81,12 +65,24 @@
 					<div>
 						<br> &ensp;
 						<h>Source:</h>
+						<br>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						
 						<span class="tab-space"></span> <input name="source"  id ="source" class="control"
 							type="text" placeholder="Your Source" required title="Enter Source"><br> &ensp;
 						<h>Destination:</h>
+						<br>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						
 						<span class="tab-space"></span> <input name="destination" id="destination"
 							class="control" type="text" placeholder="Your Destination" title="Enter Destination">
 						<br> &ensp;
+						<br>
+						&nbsp;
 						<h>Car Type:</h>
 						&ensp;&ensp; <select class="selectpicker show-tick"
 							data-style="btn-primary" id="type" name="type">
@@ -94,20 +90,33 @@
 							<option value=8>Mini</option>
 							<option value=18>SUV</option>
 						</select> <br> <br> <span class="tab-space"></span>
-						<button type="button" class="btn btn-default submit"
-							onclick="getDistance()">Estimate Ride</button>
 						&ensp; <br> <br> &ensp;
-						<h> Estimated Distance :</h>
+						<h> Distance :</h>
+						<br>
+						&nbsp;
+						&nbsp;
+						&nbsp;
 						<input id="distanceEstimate"  name="distanceEstimate" class="control" type="text"
 							placeholder="" required title="Click Estimate Ride"><br> &ensp;
-						<h> Estimated Ride Cost :(in Rs.)</h>
+						<h> Ride Cost :(in Rs.)</h>
+						<br>
+						&nbsp;
+						&nbsp;
+						&nbsp;
 						<input id="costEstimate"  name="costEstimate" class="control" type="text"
 							placeholder="" required title="Click Estimate Ride"><br> &ensp;
-						<h> Estimated Ride Time :</h>
+						<h> Ride Time :(in hrs)</h>
+						<br>
+						&nbsp;
+						&nbsp;
+						&nbsp;
+						
 						<input id="timeEstimate" class="control" type="text"
 							placeholder="" required title="Click Estimate Ride"> &ensp; <br> <span class="tab-space"></span>
-						<button type="submit" class="btn btn-default submit">
-							Confirm Your Ride</button>
+						<br>
+						
+						<center><button type="submit" class="btn btn-default submit">
+							Confirm Your Ride</button></center>
 					</div>
 				</div>
 			</form>

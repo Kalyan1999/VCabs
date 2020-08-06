@@ -35,7 +35,7 @@
 		</div>
 
 		<div id="title" style="cursor: pointer" onclick="">
-			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>Cabriolet
+			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>VCabs
 		</a>
 		</div>
 	</header>
@@ -45,9 +45,8 @@
 			<section class="col-md-5 col-md-offset-2">
 				<br style="line-height: 7em;">
 				<p>
-					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='HomePage.jsp'"><strong>Book For Yourself</strong></button>
+					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='HomePage.jsp'"><strong>Proceed</strong></button>
 					<span class="spacing">
-					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='FriendDetails.jsp'"><strong>Book For A Friend</strong>  </button>
 				</p>
 				<br style="line-height: 5.6em;">
 			</section>
