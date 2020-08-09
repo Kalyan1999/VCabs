@@ -44,7 +44,7 @@
 				style="font-size: 30px; color: white;"></span>&ensp; Payment</a> <a></a>
 			<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list"
 				style="font-size: 30px; color: white;"></span>&ensp; Rides History</a> <a></a>
-			<a href="WelcomePage.html"><span class="glyphicon glyphicon-off"
+			<a href="index.html"><span class="glyphicon glyphicon-off"
 				style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
 		</div>
 
@@ -68,7 +68,7 @@
 	<sql:query dataSource="${dbsource}" var="result">
          select d.firstName,d.lastName,d.emailId,d.phoneNumber,d.DOB,d.cabNumber from Driver d where phoneNumber = (select driverId from Ride order by bookingTime desc limit 1);
          
-        </sql:query>
+    </sql:query>
 	
 	<div class="container">
 		<br>

@@ -44,7 +44,7 @@
 				style="font-size: 30px; color: white;"></span>&ensp; Payment</a> <a></a>
 			<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list"
 				style="font-size: 30px; color: white;"></span>&ensp; Rides History</a> <a></a>
-			<a href="WelcomePage.html"><span class="glyphicon glyphicon-off"
+			<a href="index.html"><span class="glyphicon glyphicon-off"
 				style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
 		</div>
 		
@@ -53,9 +53,16 @@
 		password="kalyan" />
 		
 		
-	<sql:update dataSource="${dbsource}" var="result">
+	    <sql:update dataSource="${dbsource}" var="result">
             delete from Ride   where customerID = <%=session.getAttribute("customerID") %> order by bookingTime desc limit 1;
         </sql:update>
+        
+        <sql:update dataSource="${dbsource}" var="result1">
+    
+        update driver set status='Available' where phoneNumber=(select driverId from Ride where customerId= <%=session.getAttribute("customerID")%>
+        order by bookingTime desc limit 1);
+        </sql:update>
+  
 		<div id="main">
 			<span style="font-size: 40px; cursor: pointer" onclick="openNav()">&#9776;</span>
 		</div>
