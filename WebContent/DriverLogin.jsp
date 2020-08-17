@@ -1,9 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="ISO-8859-1">
 <title>VCabs</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="CSS/WelcomePage.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -17,38 +25,18 @@ window.onbeforeload = function(){
 	window.location.replace("Welcome.html");
 }
 </script>
+<style>
+.bgimg{
+    background-image: url('CSS/Images/backgroundcar.jpg');
+	min-height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+</style>
 </head>
-
-<body >
-
-	<section class="bgimg w3-display-container w3-text-black ">
-		<section class="col-md-6 col-md-offset-1 w3-allerta">
-			<br>
-			<p>
-				<span class="glyphicon glyphicon-map-marker"></span>VCabs</p>
-		</section>
-
-		<section class="col-md-6 col-md-offset-2 w3-container w3-xlarge">
-			<br>
-			<br>
-			<br>
-			<br>
-			<p>
-				<button type="button" class="btn btn-basic btn-lg" id="myBtn">Book a Ride</button>
-				&nbsp;
-				&nbsp;
-				<button type="button" class="btn btn-basic btn-lg" id="myBtn"><a href="DriverRegister.jsp">Driver Register</a></button>
-				&nbsp;
-				&nbsp;
-				<button type="button" class="btn btn-basic btn-lg" id="myBtn"><a href="DriverLogin.jsp">Driver Login</a></button>
-			</p>
-		</section>
-
-	</section>
-
-
-
-	<section class="modal fade" id="myModal" role="dialog">
+<body>
+<section class="bgimg">
+ <section  id="myModal" role="dialog">
 		<section class="modal-dialog">
 
 			<!-- Modal content-->
@@ -60,7 +48,7 @@ window.onbeforeload = function(){
 				</section>
 
 				<section class="modal-body" style="padding: 40px 50px;">
-		      			<form role="form" action="UserLoginController" method="post">
+		      			<form role="form" action="DriverLoginController" method="post">
 						<section class="form-group">
 							<label for="phonenum"><span
 								class="glyphicon glyphicon-user"></span> Phone number</label> <input
@@ -93,7 +81,7 @@ window.onbeforeload = function(){
 						<span class="glyphicon glyphicon-remove"></span> Cancel
 					</button>
 					<p>
-						Not a member? <a href="Register.jsp">Sign Up</a>
+						Not a member? <a href="DriverRegister.jsp">Sign Up</a>
 					</p>
 					<p>
 						<a href="ForgetPassword.jsp">Forgot Password?</a>
@@ -103,13 +91,7 @@ window.onbeforeload = function(){
 
 		</section>
 	</section>
-
-	<script>
-		$(document).ready(function() {
-			$("#myBtn").click(function() {
-				$("#myModal").modal();
-			});
-		});
-	</script>
+	</section>
+   
 </body>
 </html>

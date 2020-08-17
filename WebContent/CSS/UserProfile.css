@@ -17,6 +17,13 @@ html, body {
     text-align: left;
 }
 
+.bgimg {
+	background-image: url('Images/riding.gif');
+	min-height: 80%;
+	background-position: center;
+	background-size: cover;
+}
+
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;

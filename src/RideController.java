@@ -94,7 +94,7 @@ public class RideController extends HttpServlet {
 		}
 		else
 		{
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("HomePage.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("DriverNotAvailable.jsp");
 			requestDispatcher.forward(request, response);
 
 		}

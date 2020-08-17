@@ -57,10 +57,12 @@
 		</div>
 		<hr>
 	</header>
+	<section class="bgimg">
 	<center>
 		<h>Your Booking has been confirmed! </h>
 		<p>Here are your driver's details:</p>
 	</center>
+	
 	<sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/sys" user="root"
 		password="kalyan" />
@@ -109,6 +111,7 @@
 		<form action="Cancellation.jsp" method="post">
 		    <input type="submit" class="btn btn-default submit" value="Cancel Your Ride" />
 		</form>
+		</section>
 		
 </body>
 </html>

@@ -54,10 +54,10 @@
 	
 
 	<div id="map"></div>
-
-	  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVH7kZSu55QAuYXlXzCKJguGqdPfOJ1T4&callback=initMap"
-  type="text/javascript"></script>
-	<div class="d-flex flex-row-reverse">
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVH7kZSu55QAuYXlXzCKJguGqdPfOJ1T4&callback=initMap"
+     type="text/javascript"></script>
+	
+	 <div class="d-flex flex-row-reverse">
 		<div class="heading">Take a Ride</div>
 		<div class="row">
 			<form role="form" action="RideController" method="post">

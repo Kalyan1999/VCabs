@@ -25,7 +25,7 @@
  			<a href="UserProfile.jsp"><span class="glyphicon glyphicon-user" style="font-size:30px;color:white;"></span>&ensp; Your Account</a>
  			<a></a>
 
-			<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list" style="font-size:30px;color:white;"></span>&ensp; Rides History</a>
+			<a href="CustomerDetails.jsp"><span class="glyphicon glyphicon-list" style="font-size:30px;color:white;"></span>&ensp; Customer Details</a>
 			<a></a>
 			<a href="index.html"><span class="glyphicon glyphicon-off" style="font-size:30px;color:white;"></span>&ensp; Log Out</a>
 		</div>
@@ -35,7 +35,7 @@
 		</div>
 
 		<div id="title" style="cursor: pointer" onclick="">
-			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>VCabs
+			<a href="DriverSelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>VCabs
 		</a>
 		</div>
 	</header>
@@ -44,10 +44,7 @@
 		<section class="row">
 			<section class="col-md-5 col-md-offset-2">
 				<br style="line-height: 7em;">
-				<p>
-					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='HomePage.jsp'"><strong>Proceed</strong></button>
-					<span class="spacing">
-				</p>
+				
 				<br style="line-height: 5.6em;">
 			</section>
 		</section>

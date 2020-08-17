@@ -33,10 +33,10 @@
 	<section class="container"> <section class="container-header"
 		style="padding:35px 50px;">
 	<h4>
-		<span class="glyphicon glyphicon-pencil"></span>User Registration
+		<span class="glyphicon glyphicon-pencil"></span>Driver Registration
 	</h4>
 	</section> <section class="container-body" style="padding:40px 50px;">
-	<form role="form" action="CreateUser" method="post">
+	<form role="form" action="CreateDriver" method="post">
 		<section class="form-group"> <label for="firstName"><span
 			class="glyphicon glyphicon-user"></span> First Name</label> <input
 			type="text" class="form-control" name="firstName" required=""
@@ -79,6 +79,13 @@
 			class="glyphicon glyphicon-eye-open"></span> Re-enter Password</label> <input
 			type="password" class="form-control" name="reEnterPassword"
 			required="" id="reEnterPassword" placeholder="Re-enter Password"> </section>
+			
+		<section class="form-group"> <label for="cabNumber"><span
+		class="glyphicon glyphicon-scale">
+		</span> Cab Number</label> <input type="text"
+			class="form-control" name="cabNumber" required=""
+			placeholder="Enter Cab Number"> </section>
+		
 
 		<button type="submit" class="btn btn-basic btn-block" >
 			<span class="glyphicon glyphicon-ok"></span> Sign Up

@@ -2,11 +2,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import javax.swing.JOptionPane;
-
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -20,17 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import view.DatabaseConnection;
 
 /**
- * Servlet implementation class CreateUser
+ * Servlet implementation class CreateDriver
  */
-@WebServlet("/CreateUser")
-public class CreateUser extends HttpServlet {
+@WebServlet("/CreateDriver")
+public class CreateDriver extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-	
-    public CreateUser() {
+    public CreateDriver() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -49,7 +44,8 @@ public class CreateUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-        try {
+		
+try {
         	
         	PrintWriter out = response.getWriter();
         	
@@ -69,8 +65,22 @@ public class CreateUser extends HttpServlet {
 			query.setString(7, request.getParameter("password"));
 			
 			query.executeLargeUpdate();
-
+                     
 			System.out.println("inserted..");
+			
+			PreparedStatement query1 = con.prepareStatement(
+					"insert into Driver(firstName,lastName,emailID,phoneNumber,DOB,cabNumber,status) values(?,?,?,?,?,?,?)");
+			
+		query1.setString(1, request.getParameter("firstName"));
+		query1.setString(2, request.getParameter("lastName"));
+		query1.setString(3, request.getParameter("emailID"));
+		query1.setString(4, request.getParameter("mobileNumber"));
+		query1.setString(5, request.getParameter("dateOfBirth"));
+		query1.setString(6, request.getParameter("cabNumber"));
+		query1.setNString(7, "Available");
+
+		query1.executeLargeUpdate();
+
 			
 			RequestDispatcher rd = request.getRequestDispatcher("index.html");
 			rd.forward(request, response);
@@ -86,7 +96,6 @@ public class CreateUser extends HttpServlet {
 		
 
 
-
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -96,7 +105,6 @@ public class CreateUser extends HttpServlet {
 		} 
 
 
-		
 	}
 
 }

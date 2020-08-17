@@ -61,13 +61,14 @@
 		password="kalyan" />
 	
 	
-
+  
 	<sql:query dataSource="${dbsource}" var="result">
             SELECT * from Ride where customerID = <%=session.getAttribute("customerID")%> order by bookingTime desc ;
         </sql:query>
-	<center>
+        
+   	<center>
 		<form>
-			<table class="table-responsive table-striped table-bordered"
+			<table class="table-responsive table-dark table-bordered"
 				border="" width="60%">
 				<thead class="thead">
 					<tr height="10%">
@@ -81,7 +82,7 @@
 				</thead>
 				<c:forEach var="row" items="${result.rows}">
 					<tr>
-						<td width="30%"><c:out value="${row.carType}" />
+						<td width="30%"><c:out value="${row.carType}" /></td>
 						<td width="30%"><c:out value="${row.source}" /></td>
 						</td>
 						<td width="30%"><c:out value="${row.destination}" /></td>
@@ -94,5 +95,8 @@
 			</table>
 		</form>
 	</center>
+
+	
+	
 </body>
 </html>

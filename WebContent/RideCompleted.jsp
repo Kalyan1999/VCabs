@@ -17,11 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="JS/RideCompleted.js"></script>
-	<script>
-	function Redirect() {
-        window.location="http://localhost:8080/Cabriolet-Online-Cab-Booking/RideHistory.jsp";
-     }
-	</script>
+	
 </head>
 
 <body >
@@ -35,7 +31,7 @@
 		<a></a>
 		<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list" style="font-size: 30px; color: white;"></span>&ensp; Rides History</a>
 		<a></a>
-		<a href="WelcomePage.html"><span class="glyphicon glyphicon-off" style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
+		<a href="index.html"><span class="glyphicon glyphicon-off" style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
 	</div>
 
 	<div id="main">
@@ -43,7 +39,7 @@
 	</div>
 
 	<div id="title" style="cursor: pointer" onclick="">
-			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>Cabriolet
+			<a href="SelectionPage.jsp" style="color:white"><span class="glyphicon glyphicon-map-marker"></span>VCabs
 		</a>
 		</div>	<hr>
 	<sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
