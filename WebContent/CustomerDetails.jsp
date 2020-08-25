@@ -69,7 +69,7 @@
 		password="kalyan" />
 	
 	<sql:query dataSource="${dbsource}" var="result">
-         select customerId,source,destination from Ride where driverId = (select driverId from Ride order by bookingTime desc limit 1)order by bookingTime desc limit 1;
+         select customerId,source,destination,bookingTime from Ride where driverId = (select driverId from Ride order by bookingTime desc limit 1)order by bookingTime desc limit 1;
          
     </sql:query>
     
@@ -90,18 +90,21 @@
 						</div>
 						<div class="col-sm-6 col-md-8">
 						    <c:forEach var="row1" items="${result1.rows}">
-								<p>Customer Name</p>
+								<p><u>Customer Name</u></p>
 								<p><c:out value="${row1.firstName}" /></p> <br>
 								</p1>
 							</c:forEach>
 						
 						    <c:forEach var="row" items="${result.rows}">
-								<p>Phone number</p>
+								<p><u>Phone number</u></p>
 								<p><c:out value="${row.customerId}" /></p> <br>
-								<p>Source</p>
+								<p><u>Source</u></p>
 								<p><c:out value="${row.source}" /></p> <br>
-								<p>Destination</p>
+								<p><u>Destination</u></p>
 								<p><c:out value="${row.destination}" /> </p><br>
+								<p><u>Booking Time</u></p>
+								<p><c:out value="${row.bookingTime}" /> </p><br>
+								
 								</p1>
 							</c:forEach>
 						</div>
