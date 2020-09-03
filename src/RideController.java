@@ -108,7 +108,7 @@ public class RideController extends HttpServlet {
 
 
 
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("ConfirmBookingPage.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("LoadingPage.jsp");
 		requestDispatcher.forward(request, response);
 
 
