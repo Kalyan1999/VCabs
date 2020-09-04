@@ -8,12 +8,9 @@
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css"
-	href="CSS/ConfirmBookingPage.css">
+<link rel="stylesheet" type="text/css" href="CSS/RideHistory.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Ubuntu" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -21,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="JS/RideHistory.js"></script>
-<title>Booking Confirmed</title>
+<title>Ride History</title>
 <script>
 	function confirmGo(m, u) {
 		if (confirm(m)) {
@@ -40,48 +37,66 @@
 			<a href="HomePage.jsp"><span
 				class="glyphicon glyphicon-star-empty"
 				style="font-size: 30px; color: white;"></span>&ensp; Your Ride</a> <a></a>
-			<a href="RideCompleted.jsp"><span class="glyphicon glyphicon-credit-card"
-				style="font-size: 30px; color: white;"></span>&ensp; Payment</a> <a></a>
+
 			<a href="RideHistory.jsp"><span class="glyphicon glyphicon-list"
 				style="font-size: 30px; color: white;"></span>&ensp; Rides History</a> <a></a>
 			<a href="index.html"><span class="glyphicon glyphicon-off"
 				style="font-size: 30px; color: white;"></span>&ensp; Log Out</a>
 		</div>
-		
-	<sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/sys" user="root"
-		password="kalyan" />
-		
-		
-	    
-        <sql:update dataSource="${dbsource}" var="result1">
-    
-        update driver set status='Available' where phoneNumber=(select driverId from Ride where customerId= <%=session.getAttribute("customerID")%>
-        order by bookingTime desc limit 1);
-        </sql:update>
-        
-        <sql:update dataSource="${dbsource}" var="result2">
-    
-          update Ride set status="Cancelled" order by bookingTime desc limit 1;
-       </sql:update>
-  
-  
+
 		<div id="main">
 			<span style="font-size: 40px; cursor: pointer" onclick="openNav()">&#9776;</span>
 		</div>
 
-		<div id="title" style="cursor: pointer" onclick="HomePage.jsp">
-			<span class="glyphicon glyphicon-map-marker"></span>VCabs
+		</div>
+
+		<div id="title" style="cursor: pointer" onclick="">
+			<a href="SelectionPage.jsp" style="color: white"><span
+				class="glyphicon glyphicon-map-marker"></span>VCabs </a>
 		</div>
 		<hr>
 	</header>
-	<center>
-		<h>Your Booking has been Cancelled!! </h>
-		<center>
-			</center>
-		<form action="HomePage.jsp">
-		    <input type="submit" class="btn btn-default submit" value="Book a Cab" />
+		<sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/sys" user="root"
+		password="kalyan" />
+	
+	
+  
+	<sql:query dataSource="${dbsource}" var="result">
+            SELECT driverId,customerId,source,destination,bookingTime,status from Ride  order by bookingTime desc ;
+        </sql:query>
+        
+   	<center>
+		<form>
+			<table class="table-responsive table-dark table-bordered"
+				border="" width="60%">
+				<thead class="thead">
+					<tr height="10%">
+						<th>Driver</th>
+						<th>Customer</th>
+						<th>Source</th>
+						<th>Destination</th>
+						<th>Booking Time</th>
+					    <th>Status</th>
+					</tr>
+				</thead>
+				<c:forEach var="row" items="${result.rows}">
+					<tr>
+						<td width="30%"><c:out value="${row.driverId}" /></td>
+						<td width="30%"><c:out value="${row.customerId}" /></td>
+						</td>
+						<td width="30%"><c:out value="${row.source}" /></td>
+						<td width="30%"><c:out value="${row.destination}" /></td>
+						<td><c:out value="${row.bookingTime}" /></td>
+						<td width="30%"><c:out value="${row.status}" /></td>
+
+					</tr>
+				</c:forEach>
+			</table>
 		</form>
+	</center>
+
+	
 	
 </body>
 </html>

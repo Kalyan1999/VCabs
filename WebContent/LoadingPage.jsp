@@ -53,7 +53,7 @@
 	</div>
 
 	<div id="title" style="cursor: pointer" onclick="#">
-		<span class="glyphicon glyphicon-map-marker"></span>Cabriolet
+		<span class="glyphicon glyphicon-map-marker"></span>VCabs
 	</div>
 
 	</header>

@@ -43,6 +43,11 @@
 				<p>
 					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='DriverList.jsp'"><strong>Registered Drivers</strong></button>
 					<span class="spacing">
+					&nbsp;
+					&nbsp;
+					<button type="button" class="btn btn-basic btn-lg" onclick="window.location='TrackDrivers.jsp'"><strong>Track Drivers</strong></button>
+					<span class="spacing">
+			
 				</p>
 				<br style="line-height: 5.6em;">
 			</section>

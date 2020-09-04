@@ -77,7 +77,7 @@
 						<th>Destination</th>
 						<th>Amount</th>
 						<th>Booking Time</th>
-					
+					    <th>Status</th>
 					</tr>
 				</thead>
 				<c:forEach var="row" items="${result.rows}">
@@ -88,7 +88,7 @@
 						<td width="30%"><c:out value="${row.destination}" /></td>
 						<td width="30%"><c:out value="${row.amount}" /></td>
 						<td><c:out value="${row.bookingTime}" /></td>
-						
+						<td width="30%"><c:out value="${row.status}" /></td>
 
 					</tr>
 				</c:forEach>

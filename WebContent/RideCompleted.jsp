@@ -55,6 +55,11 @@
     update driver set status='Available' where phoneNumber=(select driverId from Ride where customerId= <%=session.getAttribute("customerID")%>
     order by bookingTime desc limit 1);
     </sql:update>
+    
+    <sql:update dataSource="${dbsource}" var="result2">
+    
+    update Ride set status="Completed" order by bookingTime desc limit 1;
+    </sql:update>
   
 	<center>
 	<h>Your Ride has been completed!</h>

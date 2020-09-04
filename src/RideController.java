@@ -73,15 +73,16 @@ public class RideController extends HttpServlet {
 
 
 	    PreparedStatement query = connection.prepareStatement(
-				   "insert into Ride(driverId,customerId,source,destination,amount,carType,bookingTime) values(?,?,?,?,?,?,NOW())");
+				   "insert into Ride(driverId,customerId,source,destination,amount,carType,bookingTime,status) values(?,?,?,?,?,?,NOW(),?)");
 
-		
-		
+		String status1="Pending";
+	
 	    query.setString(2,customerID1);
 	    query.setString(3,source1);
 	    query.setString(4,destination1);
 	    query.setDouble(5,amount1);
 	    query.setString(6,carType1);
+	    query.setString(7,status1);
 	     
 	    PreparedStatement query1 = connection.prepareStatement("select phoneNumber from Driver where status = 'Available'");
 		ResultSet resultSet = query1.executeQuery();
